@@ -17,7 +17,7 @@ func BenchmarkContext(b *testing.B) {
 		}
 	}()
 	ctx := newContext(draws, nil, nil)
-	for range b.N {
+	for b.Loop() {
 		ctx.SetFillStyle(color.White)
 		ctx.SetFillStyleString("green")
 		ctx.SetFillStyleGradient(&Gradient{})

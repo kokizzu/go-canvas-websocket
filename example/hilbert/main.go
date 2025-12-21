@@ -56,10 +56,7 @@ type hilbert struct {
 func (h *hilbert) draw() {
 	fw := h.ctx.CanvasWidth()
 	fh := h.ctx.CanvasHeight()
-	w := fw
-	if w > fh {
-		w = fh
-	}
+	w := min(fw, fh)
 	h.d = 8
 	k := 0
 	for h.d*2 < w {
